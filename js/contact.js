@@ -32,4 +32,4 @@ document.addEventListener('DOMContentLoaded', () => {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
     }
-}
+});
