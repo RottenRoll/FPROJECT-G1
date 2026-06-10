@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const hero = document.querySelector('.hero');
-    const backgrounds = [
+    const slide1 = document.querySelector('.slide1');
+    const slide2 = document.querySelector('.slide2');
+    const images = [
         'images/hero1.jpg',
         'images/hero2.jpg',
         'images/hero3.jpg',
@@ -11,17 +12,28 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     let current = 0;
-    hero.style.backgroundImage = `url('${backgrounds[current]}')`;
-    setInterval(() => {
-        current++;
+    let showingFirst = true;
 
-        if (current >= backgrounds.length) {
-            current = 0;
+    slide1.style.backgroundImage = `url('${images[0]}')`;
+
+    setInterval(() => {
+
+        current = (current + 1) % images.length;
+
+        if (showingFirst) {
+            slide2.style.backgroundImage =
+                `url('${images[current]}')`;
+            slide2.style.opacity = "1";
+            slide1.style.opacity = "0";
+
+        } else {
+            slide1.style.backgroundImage =
+                `url('${images[current]}')`;
+            slide1.style.opacity = "1";
+            slide2.style.opacity = "0";
         }
 
-        hero.style.backgroundImage =
-            `url('${backgrounds[current]}')`;
-
-    }, 6000);
+        showingFirst = !showingFirst;
+    }, 4000);
 
 });
