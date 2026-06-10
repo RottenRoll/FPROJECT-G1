@@ -70,29 +70,47 @@ ul { list-style: none; }
 }
 
 .hero {
+    position: relative;
     height: 60vh;
+    overflow: hidden;
+
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: background-image 1s ease-in-out;
-    position: relative;
+
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide1 {
+    opacity: 1;
+}
+
+.slide2 {
+    opacity: 0;
 }
 
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+    color: white;
 }
 
 .hero h1 {
