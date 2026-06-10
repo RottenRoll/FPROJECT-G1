@@ -1,0 +1,285 @@
+/* --- Variables & Reset --- */
+:root {
+    --primary-red: #D32F2F;
+    --dark-red: #B71C1C;
+    --white: #ffffff;
+    --light-gray: #f4f4f4;
+    --text-dark: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+/* --- Navigation --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-red);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--light-gray);
+    text-decoration: underline;
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    margin: 5px 0;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background-color: var(--white);
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 5px solid var(--primary-red);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--dark-red);
+}
+
+/* --- Layout & Grid --- */
+.container {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-red);
+    text-transform: uppercase;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: var(--white);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+.placeholder-img {
+    background-color: #ccc;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--primary-red);
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.btn-small {
+    background-color: var(--text-dark);
+    color: var(--white);
+    border: none;
+    padding: 5px 10px;
+    cursor:
+}
+
+/* ==========================================
+DARK MODE STYLES
+========================================== */
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+}
+
+body.dark-mode .navbar {
+    background-color: #8B0000;
+}
+
+body.dark-mode .product-card {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+}
+
+body.dark-mode .product-card h3,
+body.dark-mode .product-card p {
+    color: #f4f4f4;
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #8B0000 0%, #5a0000 100%);
+}
+
+body.dark-mode .hero h1,
+body.dark-mode .hero p {
+    color: #fff;
+}
+
+body.dark-mode h2,
+body.dark-mode .price {
+    color: #ff6b6b;
+}
+
+body.dark-mode .btn-small {
+    background-color: #ff6b6b;
+    color: #1a1a1a;
+}
+
+body.dark-mode footer {
+    background-color: #5a0000;
+}
+
+body.dark-mode .placeholder-img {
+    background-color: #444;
+    color: #aaa;
+}
+
+body.dark-mode form label {
+    color: #f4f4f4;
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #f4f4f4;
+}
+
+/* ==========================================
+RESPONSIVE DESIGN - Media Queries
+========================================== */
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #D32F2F;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .nav-links.nav-active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .navbar {
+        padding: 1rem;
+    }
+}
