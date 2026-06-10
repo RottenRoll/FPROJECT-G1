@@ -193,7 +193,7 @@ h2 {
     color: var(--white);
     border: none;
     padding: 5px 10px;
-    cursor:
+    cursor: pointer;
 }
 
 body.dark-mode {
