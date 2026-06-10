@@ -58,4 +58,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-}
+  console.log('✅ Red Denim Store JavaScript Loaded Successfully!');
+});
