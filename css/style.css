@@ -191,10 +191,6 @@ body.dark-mode .product-card p {
     color: #f4f4f4;
 }
 
-body.dark-mode .hero {
-    background: linear-gradient(135deg, #8B0000 0%, #5a0000 100%);
-}
-
 body.dark-mode .hero h1,
 body.dark-mode .hero p {
     color: #fff;
