@@ -22,6 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         hero.style.backgroundImage =
             `url('${backgrounds[current]}')`;
 
-    }, 4000);
+    }, 6000);
 
 });
