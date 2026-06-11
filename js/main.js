@@ -1,52 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.querySelector('.hamburger');
+
+    const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('nav-active');
-            
-            if (navLinks.classList.contains('nav-active')) {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '60px';
-                navLinks.style.right = '0';
-                navLinks.style.backgroundColor = '#D32F2F';
-                navLinks.style.width = '100%';
-                navLinks.style.padding = '20px';
-            } else {
-                navLinks.style.display = 'none';
-            }
-        });
-    }
+
+        if (hamburger && navLinks) {
+
+            hamburger.addEventListener('click', () => {
+
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('nav-active');
+
+            });
+        }
+    });
     const darkModeBtn = document.createElement('button');
-    darkModeBtn.textContent = '🌙';
-    darkModeBtn.style.cssText = 'position:fixed; top:80px; right:20px; padding:12px; border-radius:50%; cursor:pointer; border:none; background:#333; color:#fff; font-size:18px; z-index:101; box-shadow: 0 2px 5px rgba(0,0,0,0.3);';
+    darkModeBtn.innerHTML ='<img src="images/moon.png" alt="Dark Mode" class="theme-icon">';
+    darkModeBtn.classList.add('dark-mode-btn');
+
     document.body.appendChild(darkModeBtn);
     
     darkModeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        
+
+    document.body.classList.toggle('dark-mode');
+
+    const icon = darkModeBtn.querySelector('.theme-icon');
+
         if (document.body.classList.contains('dark-mode')) {
-            darkModeBtn.textContent = '☀️';
+
+            icon.src = 'images/sun.png';
             localStorage.setItem('darkMode', 'enabled');
+
         } else {
-            darkModeBtn.textContent = '🌙';
+
+            icon.src = 'images/moon.png';
             localStorage.setItem('darkMode', 'disabled');
         }
+
     });
 
-    // Check saved dark mode preference on load
     if (localStorage.getItem('darkMode') === 'enabled') {
-        document.body.classList.add('dark-mode');
-        darkModeBtn.textContent = '☀️';
-    }
 
-    // ==========================================
-    // 5. Smooth Scroll for Anchor Links
-    // ==========================================
+    document.body.classList.add('dark-mode');
+
+    darkModeBtn.querySelector('.theme-icon').src =
+        'images/sun.png';
+
+}
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -58,5 +58,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-  console.log('✅ Red Denim Store JavaScript Loaded Successfully!');
-});
+  console.log('Red Denim Store JavaScript Loaded Successfully!');
+
