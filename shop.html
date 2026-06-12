@@ -16,10 +16,15 @@
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="hamburger">
+        
+<div class="hamburger">
             <span></span><span></span><span></span>
         </div>
     </nav>
+
+    <div class="cart-icon" onclick="toggleCart()">
+    🛒 <span id="cart-count">0</span>
+    </div>
 
     <section class="container">
         <h2>Our Denim Collection</h2>
@@ -198,6 +203,29 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/shop.js"></script>
+    
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-footer">
+            <h3>Total: ₱ <span id="cart-total">0.00</span></h3>
+            <button class="checkout-btn" onclick="checkoutCart()">Checkout</button>
+        </div>
+    </div>
+
+    <div class="checkout-popup" id="checkout-popup">
+        <div class="popup-box">
+            <h2>Order Confirmed!</h2>
+            <p>Your Red Denim order is now being prepared.</p>
+            <button onclick="closeCheckout()">Continue Shopping</button>
+        </div>
+    </div>
+
+<script src="js/shop.js"></script>
 </body>
 </html>
