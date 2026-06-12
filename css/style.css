@@ -161,9 +161,46 @@ ul { list-style: none;
     transition: background 0.3s;
 }
 
-.about-section,
-.contact-section {
-    min-height: 75vh;
+.about-hero{
+    background-image: url("../images/about-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-card{
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+}
+
+.about-card h2{
+    margin-bottom: 15px;
+}
+
+.about-card p{
+    line-height: 1.8;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.about-card:nth-child(even){
+    margin-left: auto;
+    margin-right: 80px;
+}
+
+.about-card:nth-child(odd){
+    margin-left: 80px;
 }
 
 footer {
@@ -171,9 +208,17 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-    margin-top: 2rem;
 }
 
+.contact-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-page footer {
+    margin-top: auto;
+}
 .btn:hover {
     background-color: var(--dark-red);
 }
@@ -277,6 +322,16 @@ h2 {
 
 .form-group textarea {
     resize: vertical;
+}
+
+body.dark-mode .about-card{
+    background: rgba(42,42,42,0.8);
+    color: white;
+    backdrop-filter: blur(8px);
+}
+
+body.dark-mode .about-card h2{
+    color: #ff6b6b;
 }
 
 body.dark-mode {
